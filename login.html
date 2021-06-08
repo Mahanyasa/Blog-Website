@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Mahanyasa Keesara Blog
+	</title>
+  <script src="https://www.gstatic.com/firebasejs/6.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.6.2/firebase-auth.js"></script>
+	<meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./app.css" />
+	<!--<meta http-equiv="Refresh" content="5; url='index.html'" />-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+
+</head>
+<body>
+	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="https://rebrand.ly/PBMK">Mahanyasa Keesara Blog</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarsExampleDefault"
+        aria-controls="navbarsExampleDefault"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main role="main">
+      <div class="container">
+        <div class="card m-4">
+          <div class="card-body">
+          	<center>
+            <h1 class="pt-4"> Login To create a post</h1><br>
+            <div class="form-group">
+            	
+              <label for="Username">Email</label><br>
+              <input
+                type="email"
+                class="form-group"
+                placeholder="Email"
+                id="email"/><br>
+                <label for="Username">Password</label><br>
+              <input
+                type="password"
+                class="form-group"
+                placeholder="Password"
+                id="password"
+              /><br><br>
+              <input type="submit" value="Login" class="btn btn-primary" id="submitBtn" onclick="logIn()" />
+              <p id="error"></p>
+              </center>
+              <div>
+              	<center>
+              		<a href="create.html" id="link"></a>
+              	</center>
+              </div>
+        		</div>
+    		</div>
+		</div>
+	</main>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="login.js"></script>
+    <!--<script>
+    	var firebaseConfig = {
+    apiKey: "AIzaSyCsFE1EtoUIqIGaZ4iKWcQDu4wwBerwQoE",
+    authDomain: "blogging-website-mk271102.firebaseapp.com",
+    projectId: "blogging-website-mk271102",
+    storageBucket: "blogging-website-mk271102.appspot.com",
+    messagingSenderId: "390412641976",
+    appId: "1:390412641976:web:258b4e58e0c81df401764d",
+    measurementId: "G-4C7FW5M9HE"
+  };
+ 
+  firebase.initializeApp(firebaseConfig);
+
+const auth = firebase.auth();
+
+function logIn(){
+  var email = document.getElementById("email").value;
+  var password = document.getElementById("password").value;
+
+  const promise = auth.signInWithEmailAndPassword(email, password);
+  promise.catch(e => alert(e.message));
+  //var str = "Create Page"
+  //document.getElementById("link").innerHTML = str;
+}
+auth.onAuthStateChanged(function(user){
+  if (user) {
+    var str = "Create Page"
+    document.getElementById("link").innerHTML = str;
+    //alert("Active User");
+  }else{
+    var str = "Wrong Password"
+    document.getElementById("error").innerHtml = str;
+
+  }
+});
+    	
+    </script>-->
+</body>
+</html>
